@@ -1,0 +1,239 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="100%" height="100%">
+  <defs>
+    <!-- Background Glow -->
+    <radialGradient id="bgGlow" cx="45%" cy="42%" r="65%">
+      <stop offset="0%" stop-color="#423011" stop-opacity="0.85"/>
+      <stop offset="35%" stop-color="#1f1709" stop-opacity="0.95"/>
+      <stop offset="70%" stop-color="#0a0907" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#050504" stop-opacity="1"/>
+    </radialGradient>
+
+    <!-- Marble Reflection -->
+    <linearGradient id="marbleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#14120e"/>
+      <stop offset="15%" stop-color="#0b0a08"/>
+      <stop offset="100%" stop-color="#040403"/>
+    </linearGradient>
+
+    <!-- Gold Gradients -->
+    <linearGradient id="goldCollar" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdf0cd"/>
+      <stop offset="25%" stop-color="#d4af37"/>
+      <stop offset="50%" stop-color="#f7e2a4"/>
+      <stop offset="75%" stop-color="#aa8322"/>
+      <stop offset="100%" stop-color="#6e5012"/>
+    </linearGradient>
+
+    <linearGradient id="goldBorder" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e6c870"/>
+      <stop offset="50%" stop-color="#fff5db"/>
+      <stop offset="100%" stop-color="#b88d2b"/>
+    </linearGradient>
+
+    <!-- Perfume Liquid Gradient -->
+    <linearGradient id="liquidGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f3c96a" stop-opacity="0.95"/>
+      <stop offset="30%" stop-color="#d79b28" stop-opacity="0.9"/>
+      <stop offset="70%" stop-color="#935b11" stop-opacity="0.92"/>
+      <stop offset="100%" stop-color="#4a2a05" stop-opacity="0.98"/>
+    </linearGradient>
+
+    <!-- Crystal Cap Gradients -->
+    <linearGradient id="crystalTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8"/>
+      <stop offset="40%" stop-color="#e2d4b7" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#2a2216" stop-opacity="0.6"/>
+    </linearGradient>
+
+    <linearGradient id="crystalFacetL" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#d9c396" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#14110b" stop-opacity="0.7"/>
+    </linearGradient>
+
+    <!-- Glass Bottle Reflections -->
+    <linearGradient id="glassWall" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.45"/>
+      <stop offset="6%" stop-color="#ffffff" stop-opacity="0.1"/>
+      <stop offset="15%" stop-color="#d4af37" stop-opacity="0.05"/>
+      <stop offset="85%" stop-color="#d4af37" stop-opacity="0.05"/>
+      <stop offset="94%" stop-color="#ffffff" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.45"/>
+    </linearGradient>
+
+    <linearGradient id="specularVert" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6"/>
+      <stop offset="60%" stop-color="#ffffff" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.0"/>
+    </linearGradient>
+
+    <radialGradient id="tableGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d4af37" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Soft Drop Shadow Filter -->
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="16"/>
+      <feOffset dx="0" dy="18" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.8"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="goldGlowFilter" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- 1. Background Scene -->
+  <rect width="800" height="1000" fill="url(#bgGlow)"/>
+
+  <!-- Ambient light bokeh -->
+  <circle cx="280" cy="320" r="160" fill="url(#tableGlow)"/>
+  <circle cx="580" cy="240" r="120" fill="url(#tableGlow)" opacity="0.6"/>
+  <circle cx="160" cy="560" r="90" fill="url(#tableGlow)" opacity="0.4"/>
+
+  <!-- 2. Polished Black Marble Table Surface -->
+  <rect x="0" y="730" width="800" height="270" fill="url(#marbleGrad)"/>
+  <line x1="0" y1="730" x2="800" y2="730" stroke="#3d331d" stroke-width="1.5" opacity="0.7"/>
+  <!-- Marble veins -->
+  <path d="M 50 780 Q 220 740 380 810 T 750 760" stroke="#2a2416" stroke-width="1.2" fill="none" opacity="0.6"/>
+  <path d="M 120 860 Q 340 820 520 890 T 780 840" stroke="#221d12" stroke-width="1.5" fill="none" opacity="0.5"/>
+  <ellipse cx="400" cy="740" rx="220" ry="25" fill="#000000" opacity="0.7"/>
+
+  <!-- 3. White Jasmine Flowers at the Base (matching SDD Gambar 6.2) -->
+  <g id="jasmineFlowers" transform="translate(180, 700)">
+    <!-- Dark green leaf behind -->
+    <path d="M 0 30 C -40 20 -70 5 -90 -20 C -65 -15 -35 5 0 30 Z" fill="#1c281a" stroke="#2a3c26" stroke-width="1"/>
+    <path d="M -15 35 C -55 45 -85 55 -120 50 C -95 35 -60 30 -15 35 Z" fill="#152013" stroke="#22331f" stroke-width="1"/>
+    
+    <!-- Flower Petals (Jasmine 1) -->
+    <g transform="translate(-50, 20)">
+      <path d="M 0 0 C -15 -35 15 -35 0 0 Z" fill="#f8f7f2" opacity="0.95"/>
+      <path d="M 0 0 C 35 -15 35 15 0 0 Z" fill="#edeae1" opacity="0.9"/>
+      <path d="M 0 0 C 15 35 -15 35 0 0 Z" fill="#f5f3ec" opacity="0.95"/>
+      <path d="M 0 0 C -35 15 -35 -15 0 0 Z" fill="#e8e5dc" opacity="0.9"/>
+      <path d="M 0 0 C -25 -25 0 -40 0 0 Z" fill="#ffffff"/>
+      <circle cx="0" cy="0" r="4" fill="#d9b643"/>
+    </g>
+
+    <!-- Flower Petals (Jasmine 2 - smaller) -->
+    <g transform="translate(-95, 45)">
+      <path d="M 0 0 C -10 -25 10 -25 0 0 Z" fill="#eae7df" opacity="0.9"/>
+      <path d="M 0 0 C 25 -10 25 10 0 0 Z" fill="#f7f5ef" opacity="0.95"/>
+      <path d="M 0 0 C 10 25 -10 25 0 0 Z" fill="#ede9e0" opacity="0.9"/>
+      <path d="M 0 0 C -25 10 -25 -10 0 0 Z" fill="#ffffff" opacity="0.95"/>
+      <circle cx="0" cy="0" r="3" fill="#cfa532"/>
+    </g>
+  </g>
+
+  <!-- 4. Bottle Reflection on Marble (Flipped Softly) -->
+  <g opacity="0.22" transform="translate(0, 1470) scale(1, -1)">
+    <rect x="250" y="740" width="300" height="380" rx="20" fill="url(#liquidGrad)"/>
+    <rect x="250" y="740" width="300" height="380" rx="20" fill="#000000" opacity="0.5"/>
+  </g>
+
+  <!-- 5. Main Perfume Bottle (Thick Glass Flacon) -->
+  <g id="perfumeBottle" filter="url(#softShadow)">
+    
+    <!-- Outer Glass Shell (Thick bottom and walls) -->
+    <rect x="240" y="290" width="320" height="440" rx="24" fill="#15120c" stroke="url(#goldCollar)" stroke-width="2.5"/>
+    <rect x="240" y="290" width="320" height="440" rx="24" fill="url(#glassWall)"/>
+
+    <!-- Thick Base Glass (Heavy luxury base) -->
+    <path d="M 242 670 L 558 670 L 558 706 C 558 718 546 728 534 728 L 266 728 C 254 728 242 718 242 706 Z" fill="#1e180d" stroke="rgba(212,175,55,0.3)" stroke-width="1.5"/>
+    <line x1="260" y1="700" x2="540" y2="700" stroke="#f7e2a4" stroke-width="1" opacity="0.4"/>
+
+    <!-- Internal Liquid Reservoir -->
+    <rect x="268" y="325" width="264" height="345" rx="14" fill="url(#liquidGrad)"/>
+
+    <!-- Liquid Top Meniscus / Surface -->
+    <ellipse cx="400" cy="340" rx="128" ry="14" fill="#ffd87d" opacity="0.8"/>
+    <ellipse cx="400" cy="340" rx="128" ry="14" stroke="#fff" stroke-width="1" opacity="0.4" fill="none"/>
+
+    <!-- Internal Facet & Caustic Highlights -->
+    <path d="M 276 345 L 290 660 L 310 660 L 296 345 Z" fill="#ffffff" opacity="0.2"/>
+    <path d="M 524 345 L 510 660 L 490 660 L 504 345 Z" fill="#ffd980" opacity="0.25"/>
+
+    <!-- Golden Dip Tube (Pump Straw) -->
+    <rect x="397" y="270" width="6" height="390" rx="3" fill="#d4af37" opacity="0.6"/>
+    <line x1="400" y1="270" x2="400" y2="660" stroke="#fff" stroke-width="1.5" opacity="0.7"/>
+
+    <!-- 6. Iconic Front Label (Matching SDD Gambar 6.2 & 6.3) -->
+    <g id="bottleLabel" transform="translate(290, 420)">
+      <!-- Label Base (Black Lacquer) -->
+      <rect x="0" y="0" width="220" height="175" rx="6" fill="#090907" stroke="#1c1913" stroke-width="2"/>
+      
+      <!-- Double Gold Filigree Border -->
+      <rect x="6" y="6" width="208" height="163" rx="4" fill="none" stroke="url(#goldBorder)" stroke-width="2"/>
+      <rect x="11" y="11" width="198" height="153" rx="2" fill="none" stroke="url(#goldBorder)" stroke-width="0.8" stroke-dasharray="4,2"/>
+
+      <!-- Official RAN Partner Emblem Icon on Label -->
+      <image href="/assets/logo-icon-gold.png" x="86" y="14" width="48" height="36" preserveAspectRatio="xMidYMid meet" />
+
+      <!-- Brand Text: RAN PARTNER -->
+      <text x="110" y="78" text-anchor="middle" font-family="'Cinzel', Georgia, serif" font-size="20" font-weight="800" letter-spacing="4" fill="#ffffff">RAN</text>
+      <text x="110" y="104" text-anchor="middle" font-family="'Cinzel', Georgia, serif" font-size="16" font-weight="700" letter-spacing="5" fill="#f7e2a4">PARTNER</text>
+
+      <!-- Thin Gold Divider -->
+      <line x1="50" y1="116" x2="170" y2="116" stroke="url(#goldBorder)" stroke-width="1"/>
+      <circle cx="110" cy="116" r="2" fill="#d4af37"/>
+
+      <!-- Subtitle: EAU DE PARFUM -->
+      <text x="110" y="136" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="600" letter-spacing="3" fill="#dcd5c5">EAU DE PARFUM</text>
+
+      <!-- Volume: 50 ML -->
+      <text x="110" y="154" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="700" letter-spacing="2.5" fill="#a49c87">50 ML</text>
+    </g>
+
+    <!-- Glass Specular Left Glare Line -->
+    <rect x="246" y="300" width="12" height="420" rx="6" fill="url(#specularVert)" opacity="0.7"/>
+    <line x1="252" y1="310" x2="252" y2="680" stroke="#ffffff" stroke-width="2" opacity="0.8"/>
+
+    <!-- 7. Gold Atomizer Collar & Neck -->
+    <rect x="365" y="255" width="70" height="35" rx="3" fill="url(#goldCollar)" stroke="#ffd87d" stroke-width="1"/>
+    <line x1="365" y1="267" x2="435" y2="267" stroke="#684a0d" stroke-width="1.5"/>
+    <line x1="365" y1="278" x2="435" y2="278" stroke="#fdf0cd" stroke-width="1"/>
+
+    <!-- Spray Nozzle -->
+    <rect x="382" y="235" width="36" height="20" rx="2" fill="url(#goldCollar)"/>
+    <circle cx="400" cy="245" r="3" fill="#3a2707"/>
+
+    <!-- 8. Faceted Crystal Stopper / Cap (Emerald-Cut Luxury Cap) -->
+    <g id="crystalCap" filter="url(#goldGlowFilter)">
+      <!-- Cap Outer Profile -->
+      <polygon points="340,150 460,150 490,185 490,230 460,240 340,240 310,230 310,185" fill="#1a150e" stroke="url(#goldCollar)" stroke-width="1.5"/>
+      <polygon points="340,150 460,150 490,185 490,230 460,240 340,240 310,230 310,185" fill="url(#crystalTop)"/>
+
+      <!-- Top Flat Facet -->
+      <polygon points="350,156 450,156 470,180 450,200 350,200 330,180" fill="url(#crystalFacetL)"/>
+
+      <!-- Bevel Edge Cuts -->
+      <line x1="340" y1="150" x2="350" y2="156" stroke="#ffffff" stroke-width="1.5" opacity="0.8"/>
+      <line x1="460" y1="150" x2="450" y2="156" stroke="#ffffff" stroke-width="1.5" opacity="0.8"/>
+      <line x1="490" y1="185" x2="470" y2="180" stroke="#ffffff" stroke-width="1" opacity="0.6"/>
+      <line x1="490" y1="230" x2="450" y2="200" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
+      <line x1="310" y1="185" x2="330" y2="180" stroke="#ffffff" stroke-width="1" opacity="0.6"/>
+      <line x1="310" y1="230" x2="350" y2="200" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
+
+      <!-- Center Gem Highlight -->
+      <polygon points="370,165 430,165 440,188 430,195 370,195 360,188" fill="#ffffff" opacity="0.25"/>
+    </g>
+  </g>
+
+  <!-- 9. Subtle Golden Sparkle Stars -->
+  <g fill="#fef3cd" opacity="0.8">
+    <path d="M 230 240 Q 230 255 240 255 Q 230 255 230 270 Q 230 255 220 255 Q 230 255 230 240 Z"/>
+    <path d="M 580 380 Q 580 390 588 390 Q 580 390 580 400 Q 580 390 572 390 Q 580 390 580 380 Z" transform="scale(0.8) translate(140, 90)"/>
+    <path d="M 480 140 Q 480 150 488 150 Q 480 150 480 160 Q 480 150 472 150 Q 480 150 480 140 Z"/>
+  </g>
+</svg>

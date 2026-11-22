@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 240" width="100%" height="100%">
+  <defs>
+    <!-- Smooth Horizontal Fade (Left transparent, right glow) -->
+    <linearGradient id="fadeLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#14120e" stop-opacity="0"/>
+      <stop offset="35%" stop-color="#14120e" stop-opacity="0.2"/>
+      <stop offset="65%" stop-color="#2a2010" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#3b2b11" stop-opacity="0.8"/>
+    </linearGradient>
+
+    <!-- Warm Golden Ambient Radial -->
+    <radialGradient id="goldRadial" cx="75%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#e6c870" stop-opacity="0.45"/>
+      <stop offset="45%" stop-color="#997224" stop-opacity="0.25"/>
+      <stop offset="80%" stop-color="#3d2a09" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#0b0a08" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Gold Metallic Gradients -->
+    <linearGradient id="goldCapGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdf1d0"/>
+      <stop offset="30%" stop-color="#d4af37"/>
+      <stop offset="70%" stop-color="#8c6a1b"/>
+      <stop offset="100%" stop-color="#543e0d"/>
+    </linearGradient>
+
+    <linearGradient id="liquidAmber1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5cf73" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#b87d18" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#593205" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <linearGradient id="liquidAmber2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd88a" stop-opacity="0.95"/>
+      <stop offset="60%" stop-color="#c98a22" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#693907" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <!-- Glass Specular Highlight -->
+    <linearGradient id="glassGlare" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.5"/>
+      <stop offset="70%" stop-color="#ffffff" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.0"/>
+    </linearGradient>
+
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Ambient Light Backing -->
+  <rect x="0" y="0" width="520" height="240" fill="url(#goldRadial)"/>
+
+  <!-- Shimmering Bokeh Particles -->
+  <g opacity="0.6">
+    <circle cx="340" cy="60" r="18" fill="#d4af37" opacity="0.25"/>
+    <circle cx="460" cy="40" r="24" fill="#ffd978" opacity="0.3"/>
+    <circle cx="280" cy="180" r="14" fill="#d4af37" opacity="0.2"/>
+    <circle cx="490" cy="190" r="20" fill="#ffd978" opacity="0.25"/>
+    <circle cx="390" cy="210" r="10" fill="#fdf0cd" opacity="0.3"/>
+  </g>
+
+  <!-- Ground Reflection Surface -->
+  <ellipse cx="400" cy="215" rx="110" ry="12" fill="#000000" opacity="0.6"/>
+  <ellipse cx="320" cy="218" rx="70" ry="10" fill="#000000" opacity="0.5"/>
+
+  <!-- BOTTLE 1: 50 ML Bottle (Taller, Center-Right) -->
+  <g id="bottle50ml" transform="translate(350, 45)">
+    <!-- Base Shadow -->
+    <ellipse cx="50" cy="168" rx="45" ry="8" fill="#050504" opacity="0.7"/>
+
+    <!-- Outer Glass Flacon -->
+    <rect x="10" y="45" width="80" height="120" rx="10" fill="#14110b" stroke="url(#goldCapGrad)" stroke-width="1.2"/>
+    
+    <!-- Thick Glass Base -->
+    <rect x="12" y="148" width="76" height="15" rx="2" fill="#241d11" opacity="0.8"/>
+    <line x1="16" y1="156" x2="84" y2="156" stroke="#fce3a2" stroke-width="0.8" opacity="0.4"/>
+
+    <!-- Amber Liquid Reservoir -->
+    <rect x="18" y="55" width="64" height="92" rx="6" fill="url(#liquidAmber1)"/>
+    <ellipse cx="50" cy="58" rx="30" ry="4" fill="#ffe094" opacity="0.7"/>
+
+    <!-- Dip Tube -->
+    <line x1="50" y1="35" x2="50" y2="148" stroke="#fbe4a8" stroke-width="1.2" opacity="0.7"/>
+
+    <!-- Label -->
+    <rect x="25" y="80" width="50" height="42" rx="3" fill="#090907" stroke="url(#goldCapGrad)" stroke-width="0.8"/>
+    <rect x="28" y="83" width="44" height="36" rx="2" fill="none" stroke="#d4af37" stroke-width="0.5" stroke-dasharray="2,1"/>
+    <text x="50" y="96" text-anchor="middle" font-family="'Cinzel', Georgia, serif" font-size="7.5" font-weight="800" fill="#ffffff" letter-spacing="1.2">RAN</text>
+    <text x="50" y="105" text-anchor="middle" font-family="'Cinzel', Georgia, serif" font-size="5.5" font-weight="700" fill="#f5df9b" letter-spacing="1">PARTNER</text>
+    <line x1="34" y1="110" x2="66" y2="110" stroke="#d4af37" stroke-width="0.5"/>
+    <text x="50" y="117" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="4" font-weight="600" fill="#a89f8d" letter-spacing="0.8">50 ML</text>
+
+    <!-- Glass Specular Glare -->
+    <rect x="12" y="47" width="5" height="114" rx="2" fill="url(#glassGlare)"/>
+
+    <!-- Gold Collar & Sprayer -->
+    <rect x="40" y="32" width="20" height="14" rx="2" fill="url(#goldCapGrad)" stroke="#fdebbd" stroke-width="0.5"/>
+    <rect x="44" y="24" width="12" height="9" rx="1.5" fill="url(#goldCapGrad)"/>
+
+    <!-- Faceted Crystal Cap -->
+    <g filter="url(#softGlow)">
+      <polygon points="32,2 68,2 78,14 78,25 68,27 32,27 22,25 22,14" fill="#201a11" stroke="url(#goldCapGrad)" stroke-width="1"/>
+      <polygon points="35,5 65,5 72,14 65,22 35,22 28,14" fill="#ffffff" opacity="0.35"/>
+      <line x1="32" y1="2" x2="35" y2="5" stroke="#ffffff" stroke-width="1" opacity="0.7"/>
+      <line x1="68" y1="2" x2="65" y2="5" stroke="#ffffff" stroke-width="1" opacity="0.7"/>
+    </g>
+  </g>
+
+  <!-- BOTTLE 2: 30 ML Bottle (Slightly to the Left & In Front) -->
+  <g id="bottle30ml" transform="translate(285, 80)">
+    <!-- Base Shadow -->
+    <ellipse cx="40" cy="138" rx="36" ry="7" fill="#000000" opacity="0.6"/>
+
+    <!-- Outer Glass Flacon -->
+    <rect x="10" y="38" width="60" height="95" rx="8" fill="#14110b" stroke="url(#goldCapGrad)" stroke-width="1"/>
+    
+    <!-- Thick Base Glass -->
+    <rect x="12" y="120" width="56" height="12" rx="2" fill="#201a0f"/>
+    <line x1="15" y1="126" x2="65" y2="126" stroke="#fce3a2" stroke-width="0.6" opacity="0.4"/>
+
+    <!-- Liquid -->
+    <rect x="16" y="46" width="48" height="73" rx="5" fill="url(#liquidAmber2)"/>
+    <ellipse cx="40" cy="49" rx="22" ry="3.5" fill="#ffe7a8" opacity="0.7"/>
+
+    <!-- Dip Tube -->
+    <line x1="40" y1="30" x2="40" y2="120" stroke="#fae3a6" stroke-width="1" opacity="0.7"/>
+
+    <!-- Label -->
+    <rect x="22" y="65" width="36" height="34" rx="2.5" fill="#090907" stroke="url(#goldCapGrad)" stroke-width="0.6"/>
+    <text x="40" y="78" text-anchor="middle" font-family="'Cinzel', Georgia, serif" font-size="6" font-weight="800" fill="#ffffff" letter-spacing="1">RAN</text>
+    <text x="40" y="85" text-anchor="middle" font-family="'Cinzel', Georgia, serif" font-size="4.5" font-weight="700" fill="#f5df9b" letter-spacing="0.8">PARTNER</text>
+    <line x1="28" y1="88" x2="52" y2="88" stroke="#d4af37" stroke-width="0.4"/>
+    <text x="40" y="94" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="3.5" font-weight="600" fill="#a89f8d" letter-spacing="0.6">30 ML</text>
+
+    <!-- Glass Specular Glare -->
+    <rect x="12" y="40" width="4" height="90" rx="1.5" fill="url(#glassGlare)"/>
+
+    <!-- Gold Collar & Sprayer -->
+    <rect x="32" y="27" width="16" height="12" rx="2" fill="url(#goldCapGrad)" stroke="#fdebbd" stroke-width="0.5"/>
+    <rect x="35" y="20" width="10" height="8" rx="1.5" fill="url(#goldCapGrad)"/>
+
+    <!-- Cap -->
+    <g filter="url(#softGlow)">
+      <polygon points="26,3 54,3 62,13 62,21 54,23 26,23 18,21 18,13" fill="#1c160e" stroke="url(#goldCapGrad)" stroke-width="0.9"/>
+      <polygon points="28,5 52,5 57,12 52,19 28,19 23,12" fill="#ffffff" opacity="0.3"/>
+    </g>
+  </g>
+
+  <!-- Sparkle Stars -->
+  <g fill="#ffffff" opacity="0.9">
+    <path d="M 330 35 Q 330 43 335 43 Q 330 43 330 51 Q 330 43 325 43 Q 330 43 330 35 Z"/>
+    <path d="M 465 100 Q 465 106 469 106 Q 465 106 465 112 Q 465 106 461 106 Q 465 106 465 100 Z" opacity="0.8"/>
+    <path d="M 405 15 Q 405 21 409 21 Q 405 21 405 27 Q 405 21 401 21 Q 405 21 405 15 Z" opacity="0.7"/>
+  </g>
+</svg>
